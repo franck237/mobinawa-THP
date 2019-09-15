@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'admins/index'
+  get 'admins/show'
+  get 'admins/new'
+  get 'admins/create'
+  get 'admins/edit'
+  get 'admins/update'
+  get 'admins/destroy'
   get 'sub_sectors/index'
   get 'sub_sectors/show'
   get 'sub_sectors/new'
