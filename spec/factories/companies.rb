@@ -1,15 +1,11 @@
 FactoryBot.define do
   factory :company do
-    number { "MyString" }
-    name { "MyString" }
-    email { "MyString" }
-    website { "MyString" }
-    logo { "MyString" }
-    description { "MyText" }
-    date { "2019-09-15 16:21:13" }
+    number { Faker::PhoneNumber.phone_number_with_country_code }
+    name { Faker::Company.name }
+    description { "Le dieu du football" }
     status { 1 }
-    sub_sector { nil }
-    admin { nil }
-    country { nil }
+    admin { FactoryBot.create(:admin) }  
+    country { FactoryBot.create(:country) }
+    sub_sector { FactoryBot.create(:sub_sector) }
   end
 end
