@@ -70,6 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'faker'
 gem 'dotenv-rails'
+gem 'friendly_id'
 
 # Reset index for the seed
 gem 'activerecord-reset-pk-sequence'
