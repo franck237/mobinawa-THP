@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :sub_sector do
-    name { "MyString" }
-    sector { nil }
+    name { "Football" }
+    sector { FactoryBot.create(:sector) }
   end
 end
