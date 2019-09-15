@@ -6,6 +6,6 @@ FactoryBot.define do
     image_product { "MyString" }
     quantity { 1 }
     status { false }
-    company { nil }
+    company { FactoryBot.create(:company) }
   end
 end
