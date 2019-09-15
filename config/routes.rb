@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'sectors/index'
+  get 'sectors/show'
+  get 'sectors/new'
+  get 'sectors/create'
+  get 'sectors/edit'
+  get 'sectors/update'
+  get 'sectors/destroy'
   get 'countries/index'
   get 'countries/show'
   get 'countries/new'
