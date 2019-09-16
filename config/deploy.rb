@@ -2,7 +2,7 @@
 lock "~> 3.11.1"
 
 set :application, "mobinawa-fr"
-set :repo_url, "https://github.com/franck237/mobitest.git"
+set :repo_url, "https://github.com/franck237/mobinawa_testing.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

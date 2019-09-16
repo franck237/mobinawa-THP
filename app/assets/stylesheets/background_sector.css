@@ -4,5 +4,5 @@
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background-image: url('bg-pattern.png'), linear-gradient(to left, #E26125, #154577);
+  background-image: image-url("/images/bg-pattern.png"), linear-gradient(to left, #E26125, #154577);
 }
