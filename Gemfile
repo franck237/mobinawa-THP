@@ -78,5 +78,6 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'table_print'
 
-# Font awesome
+# Icons
 gem 'font-awesome-rails'
+gem 'swiper-rails'
