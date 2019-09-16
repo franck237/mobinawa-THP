@@ -12,6 +12,42 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
- */
+ 
+ * Add of Bootstrap CSS
+ *= require bootstrap/css/bootstrap.min
 
+ * Add of every plugins used by Boomerang
+ *= require swiper/css/swiper.min
+ *= require hamburgers/hamburgers.min
+ *= require animate/animate.min
+ *= require fancybox/css/jquery.fancybox.min
+
+ * Add of icons
+ *= require ionicons/css/ionicons.min
+ *= require line-icons/line-icons
+ *= require line-icons-pro/line-icons-pro
+
+ * Add of linea icons
+ *= require linea/arrows/linea-icons
+ *= require linea/basic/linea-icons
+ *= require linea/ecommerce/linea-icons
+ *= require linea/software/linea-icons
+
+
+ * Add of the Global Style Boomerang CSS
+ *= require boomerang
+
+ * Add of Font awesome
+ *= require font-awesome
+*/
+
+.masthead {
+  position: relative;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  color: white;
+  background: url("backgrounds/bg-pattern.png"), #E26125;
+  background: url("backgrounds/bg-pattern.png"), -webkit-gradient(linear, right top, left top, from(#E26125), to(#154577));
+  background: url("backgrounds/bg-pattern.png"), linear-gradient(to left, #E26125, #154577);
+}
