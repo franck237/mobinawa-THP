@@ -10,7 +10,47 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
     <%= render 'application/favicon' %>
   </head>
-
+  <header>
+   <!-- Ajout d'une NavBar bootstrap-->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to 'Mobinawa', root_path, class: "navbar-brand" %>
+​
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+​
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          <%= link_to 'Home', root_path, class: "nav-link btn mr-1"  %>
+          </li>
+   
+       
+​
+        <ul class="navbar-nav my-2 my-lg-0" style="position: absolute; left: 80%;">
+        <% if !current_admin%> 
+​
+          <li class="nav-item">
+          <%=link_to 'SignIn', new_admin_session_path, class: "btn btn-outline-primary mr-2" %>
+          </li>
+          <%= link_to 'SignUp',new_admin_registration_path, class: "btn btn-outline-primary" %>
+          </li>
+          <% else %>
+          <li class="nav-item ">
+          <%= link_to 'My Profile',admin_path(current_admin.id), class: "nav-link btn mr-1" %>
+          </li>
+          <li class="nav-item ">
+          <%= link_to 'SignOut',destroy_admin_session_path, method: :delete, data: {confirm: 'Êtes-vous sûr de vous déconnecter ?'}, class: "nav-link btn btn-outline-danger" %> 
+          </li>
+          <% end %>
+        </ul>
+​
+          
+      </div>
+​
+    </nav>
+  </header>
+​
   <body>
     <%= yield %>
   </body>
