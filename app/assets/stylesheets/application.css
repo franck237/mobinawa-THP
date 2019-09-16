@@ -47,7 +47,5 @@
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url("backgrounds/bg-pattern.png"), #E26125;
-  background: url("backgrounds/bg-pattern.png"), -webkit-gradient(linear, right top, left top, from(#E26125), to(#154577));
-  background: url("backgrounds/bg-pattern.png"), linear-gradient(to left, #E26125, #154577);
+  background-image: url("backgrounds/bg-pattern.png"), linear-gradient(to left, #E26125, #154577);
 }
