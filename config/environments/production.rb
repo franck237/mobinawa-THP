@@ -26,7 +26,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
- # Disable Rails's static asset server (Apache or nginx will already do this)  
+  # Disable Rails's static asset server (Apache or nginx will already do this)  
 config.serve_static_assets = false
 
 # Compress JavaScripts and CSS  
@@ -37,6 +37,7 @@ config.assets.compile = false
 
 # Generate digests for assets URLs  
 config.assets.digest = true
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
