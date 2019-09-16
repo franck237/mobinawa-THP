@@ -78,5 +78,8 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'table_print'
 
-# Font awesome
+# Font icons
+gem 'ionicons-rails'
+gem 'linea'
 gem 'font-awesome-rails'
+
