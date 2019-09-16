@@ -11,6 +11,8 @@ Rails.application.config.assets.paths << Rails.root.join('vendor')
 Rails.application.config.assets.paths << Rails.root.join('lib')
 Rails.application.config.assets.paths << Rails.root.join('lib', 'slidebar')
 Rails.application.config.assets.paths << Rails.root.join('lib', 'revolution')
+Rails.application.config.assets.paths << Rails.root.join('lib', 'fonts')
+Rails.application.config.assets.paths << Rails.root.join('lib', 'scss')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
