@@ -8,10 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'background_sector', media: 'all', 'data-turbolinks-track': 'reload'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="../../../vendor/swiper/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
     <%= render 'application/favicon' %>
-    
+    <script src="https://kit.fontawesome.com/66959b10c2.js"></script>
   </head>
   <body>
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -47,7 +46,5 @@
       </div>
     </nav>
     <%= yield %>
-    <script src="https://kit.fontawesome.com/66959b10c2.js"></script>
-    <script src="/assets/swiper/js/swiper.min.js"></script>
   </body>
 </html>
