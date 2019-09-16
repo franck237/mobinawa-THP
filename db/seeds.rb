@@ -24,26 +24,26 @@ Sector.reset_pk_sequence
 Country.reset_pk_sequence
 
 # Creation of 3 countries
-	france = Country.create!(code: "+33", name: "France", flag: "flags/flag-fr.png", status: true, digit: 10)
-	cameroun = Country.create!(code: "+237", name: "Cameroun", flag: "flags/flag-cm.png", status: true, digit: 8)
-	nigeria = Country.create!(code: "+234", name: "Nigeria", flag: "flags/flag-ng.png", status: true, digit: 8)
+	france = Country.create!(code: "+33", name: "France", flag: "icons/flags/fr.png", status: true, digit: 10)
+	cameroun = Country.create!(code: "+237", name: "Cameroun", flag: "icons/flags/cm.png", status: true, digit: 8)
+	nigeria = Country.create!(code: "+234", name: "Nigeria", flag: "icons/flags/ng.png", status: true, digit: 8)
 
 # Creation of 12 sectors
 	i = 0
 	4.times do
-	sector = Sector.create!(name: Faker::Company.industry + (i+1).to_s, icon: "icons/figma/icon-school.svg")
+	sector = Sector.create!(name: Faker::Company.industry + (i+1).to_s, icon: "icons/figma/icon-school.png")
 	i =+ 1
 	end
 
 	i = 4
 	4.times do
-	sector = Sector.create!(name: Faker::Company.industry + (i+1).to_s, icon: "icons/figma/icon-build.svg")
+	sector = Sector.create!(name: Faker::Company.industry + (i+1).to_s, icon: "icons/figma/icon-build.png")
 	i =+ 1
 	end
 
 	i = 8
 	4.times do
-	sector = Sector.create!(name: Faker::Commerce.department(max: 4) + (i+1).to_s, icon: "icons/figma/icon-health.svg")
+	sector = Sector.create!(name: Faker::Commerce.department(max: 4) + (i+1).to_s, icon: "icons/figma/icon-health.png")
 	i =+ 1
 	end
 
