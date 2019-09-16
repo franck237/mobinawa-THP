@@ -78,6 +78,9 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'table_print'
 
+# Gem swiper for buttons icons
+gem 'swiper-rails'
+
 # Font icons
 gem 'ionicons-rails'
 gem 'linea'
