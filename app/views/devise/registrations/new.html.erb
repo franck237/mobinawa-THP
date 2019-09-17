@@ -27,7 +27,7 @@
               <label class="form-control-label">Phone number *</label>
                  <div class="input-group input-group-transparent">
                     <div class="input-group-prepend">
-                       <span class="input-group-text"><i class="fas fa-user"></i></span>
+                       <span class="input-group-text"><i class="fas fa-mobile"></i></span>
                     </div>
                       <%= f.telephone_field :number, class: "form-control form-control-label", autofocus: true, type: "tel", placeholder: "01 16 88 12 16 " %>
                  </div>
@@ -37,7 +37,7 @@
               <label class="form-control-label ">Country *</label>
                  <div class="input-group input-group-transparent">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      <span class="input-group-text"><i class="fas fa-globe-africa"></i></span>
                     </div>
 
                         <%= f.collection_select :country_id, Country.all, :id, :name ,class: "form-control form-control-label"%>
@@ -48,7 +48,7 @@
               <label class="form-control-label ">Company Title *</label>
                  <div class="input-group input-group-transparent">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      <span class="input-group-text"><i class="fas fa-building"></i></span>
                     </div>
                     <%= f.text_field :function, class: "form-control form-control-label", autofocus: true, placeholder: "CEO" %>
                  </div>
@@ -60,7 +60,7 @@
                <label class="form-control-label">Email address *</label>
                    <div class="input-group input-group-transparent">
                       <div class="input-group-prepend">
-                         <span class="input-group-text"><i class="fas fa-user"></i></span>
+                         <span class="input-group-text"><i class="fas fa-paper-plane"></i></span>
                       </div>
                      <%= f.email_field :email, class: "form-control form-control-label", autofocus: true, autocomplete: "email", placeholder: "jack.donaghy@gmail.com" %>
                    </div>
