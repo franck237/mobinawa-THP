@@ -43,10 +43,10 @@
             <% @sectors.each.with_index(1) do |sector| %>
             <div class="col-lg-3 col-md-4 c-white">
                     <div class="block-icon c-white">
-                    <%= link_to image_tag(sector.icon, width: 60, height: 60), company_path(sector.id) %>
+                    <%= link_to image_tag(sector.icon, width: 60, height: 60), sector_path(sector.id) %>
                     </div>
                     <div class="block-content">
-                    <h3 class="heading heading-6 strong-600"><%= link_to (sector.name), company_path(sector.id), class: "c-white" %></h3>
+                    <h3 class="heading heading-6 strong-600"><%= link_to (sector.name), sector_path(sector.id), class: "c-white" %></h3>
                     <br>
                     </div>
             </div>
