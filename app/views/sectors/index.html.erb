@@ -1,13 +1,12 @@
 <section class="slice-lg masthead">
     <!-- Mask overlay -->
-   
 
     <!-- Container -->
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12">
                 <div class="fluid-paragraph paragraph-md">
-
+                	<div><%= flash[:alert] %></div>
                     <!-- Left aligned Mobinawa icon -->
                     <div class="icon-block icon-block--style-1-v1">
                         <div class="block-icon">
@@ -21,6 +20,16 @@
                         </div>
                     </div>
 
+                    <!-- Search bar real -->
+                    <%= form_tag(search_companies_path, :method => "get", class: 'navbar-form navbar-left') do %>  
+                        <div class="input-group">
+	                          <%= search_field_tag :search, params[:search], placeholder: "Enter the name of the company here", class: "form-control" %>
+	                          <div class="input-group-btn">
+	                            <%= button_tag "", :class => 'btn btn-info fa fa-search',:name => nil%>
+	                          </div>
+                        </div>
+                     <% end %>
+                      
                     <!-- Searcg bar -->
                     <form action="">
                       <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
@@ -37,7 +46,6 @@
             </div>
         </div>
         <br>
-
         <!-- Boucle Index Categories -->
         <div class="row c-white">
             <% @sectors.each.with_index(1) do |sector| %>

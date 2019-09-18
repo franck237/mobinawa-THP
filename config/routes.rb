@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :sectors
+  get '/search' => 'companies#search', :as => 'search_companies'
 end
