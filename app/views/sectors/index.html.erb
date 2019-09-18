@@ -6,7 +6,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="fluid-paragraph paragraph-md">
-                	<div><%= flash[:alert] %></div>
+                	<!-- <div><%= flash[:alert] %></div> -->
+
                     <!-- Left aligned Mobinawa icon -->
                     <div class="icon-block icon-block--style-1-v1">
                         <div class="block-icon">
@@ -21,44 +22,32 @@
                     </div>
 
                     <!-- Search bar real -->
-                    <%= form_tag(search_companies_path, :method => "get", class: 'navbar-form navbar-left') do %>  
-                        <div class="input-group">
-	                          <%= search_field_tag :search, params[:search], placeholder: "Enter the name of the company here", class: "form-control" %>
-	                          <div class="input-group-btn">
-	                            <%= button_tag "", :class => 'btn btn-info fa fa-search',:name => nil%>
-	                          </div>
-                        </div>
-                     <% end %>
-                      
-                    <!-- Searcg bar -->
-                    <form action="">
-                      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                        <div class="input-group">
-                          <input type="search" placeholder="Type your text here" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                    <%= form_tag(search_companies_path, :method => "get", class: 'p-1 bg-light rounded rounded-pill shadow-sm mb-4') do %>  
+                      <div class="input-group">
+                          <%= search_field_tag :search, params[:search], placeholder: "Enter the name of the company here", class: "form-control border-0 bg-light" %>
                           <div class="input-group-append">
-                            <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                            <%= button_tag "", :class => 'btn btn-link text-primary fa fa-search',:name => nil%>
                           </div>
-                        </div>
                       </div>
-                    </form>
-                    <br>
+                   	<% end %>
+                  <br>
                 </div>
             </div>
         </div>
         <br>
         <!-- Boucle Index Categories -->
         <div class="row c-white">
-            <% @sectors.each.with_index(1) do |sector| %>
+          <% @sectors.each.with_index(1) do |sector| %>
             <div class="col-lg-3 col-md-4 c-white">
-                    <div class="block-icon c-white">
-                    <%= link_to image_tag(sector.icon, width: 60, height: 60), sector_path(sector.id) %>
-                    </div>
-                    <div class="block-content">
-                    <h3 class="heading heading-6 strong-600"><%= link_to (sector.name), sector_path(sector.id), class: "c-white" %></h3>
-                    <br>
-                    </div>
+              <div class="block-icon c-white">
+                <%= link_to image_tag(sector.icon, width: 60, height: 60), sector_path(sector.id) %>
+              </div>
+            	<div class="block-content">
+            		<h3 class="heading heading-6 strong-600"><%= link_to (sector.name), sector_path(sector.id), class: "c-white" %></h3>            
+        			</div>
             </div>
-            <% end %>
+          <% end %>
+         	<br>
         </div>
     </div>
 </section>

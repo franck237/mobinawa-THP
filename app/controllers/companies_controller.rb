@@ -32,11 +32,11 @@ class CompaniesController < ApplicationController
     @companies = Company.all.order(:name)
     if params[:search].blank?
       flash[:alert] = "Empty field!"
-      redirect_to sectors_path
+      redirect_to companies_path
       return
     else
       @parameter = params[:search].downcase  
-      @results = Company.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")  
+      @results = Company.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
     end
   end
 end
