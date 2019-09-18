@@ -14,39 +14,67 @@
     <script src="https://kit.fontawesome.com/66959b10c2.js"></script> 
   </head>
   <body>
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <%= link_to 'Mobinawa', root_path, class: "navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-​
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          <%= link_to 'Home', root_path, class: "nav-link btn mr-1"  %>
-          </li>
-        </ul>
-       
-        <ul class="navbar-nav my-2 my-lg-0" style="position: absolute; left: 80%;">
-        <% if !current_admin%> 
-          <li class="nav-item">
-          <%=link_to 'SignIn', new_admin_session_path, class: "btn btn-outline-primary mr-2" %>
-          </li>
-          <li class="nav-item">
-          <%= link_to 'SignUp',new_admin_registration_path, class: "btn btn-outline-primary" %>
-          </li>
-          <% else %>
-          <li class="nav-item ">
-          <%= link_to 'My Profile',admin_path(current_admin.id), class: "nav-link btn mr-1" %>
-          </li>
-          <li class="nav-item ">
-          <%= link_to 'SignOut',destroy_admin_session_path, method: :delete, data: {confirm: 'Êtes-vous sûr de vous déconnecter ?'}, class: "nav-link btn btn-outline-danger" %> 
-          </li>
-        <% end %>
-        </ul>   
-      </div>
-    </nav>
+    <header>
+            <!-- Header -->
+            <div class="st-content">
+                <div class="st-content-inner">                
+                  <div class="header">
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg navbar--bold navbar--style-2 navbar-light bg-default  navbar--bb-1px">
+                      <div class="container navbar-container">
+                        <!-- Brand/Logo -->
+                        <%= link_to image_tag("logo/mobinawa.png", width: 100), sectors_path, class: "navbar-brand" %>
+                     
+                        <div class="d-inline-block">
+                          <!-- Navbar toggler  -->
+                          <button class="navbar-toggler hamburger hamburger-js hamburger--spring" type="button" data-toggle="collapse" data-target="#navbar_main" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                          </span>
+                          </button>
+                        </div>
+                        <div class="collapse navbar-collapse align-items-center justify-content-center" id="navbar_main">                   
+                          <!-- Navbar links -->
+                          <ul class="navbar-nav">
+                              <li class="nav-item dropdown megamenu">
+                                  <%= link_to 'Home', homes_index_path, class: "nav-link btn mr-1"  %>
+                              </li>                            
+                              <li class="nav-item dropdown megamenu">
+                                  <%= link_to 'New item', new_company_path, class: "nav-link btn mr-1"  %>
+                              </li>
+                          </ul>
+                          <ul class="navbar-nav ml-lg-auto">
+                              <% if !current_admin%>
+                              <li class="nav-item ">                           
+                                <%=link_to 'SignIn', new_admin_session_path, class: "btn btn-outline-primary mr-1 ml-1" %>
+                              </li>
+                              <li class="nav-item ">  
+                              <%= link_to 'SignUp',new_admin_registration_path, class: "btn btn-outline-primary mr-1 ml-1" %>
+                              </li>
+                              <% else %>
+                              <li class="nav-item ">
+                              <%= link_to 'My Profile',admin_path(current_admin.id), class: "nav-link btn mr-1" %>
+                              </li>
+                              <li class="nav-item ">
+                              <%= link_to 'SignOut',destroy_admin_session_path, method: :delete, data: {confirm: 'Êtes-vous sûr de vous déconnecter ?'}, class: "nav-link btn btn-outline-danger" %> 
+                              </li>
+                              <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+            </div> 
+          </header> 
     <%= yield %>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.min.js"></script>
   </body>
 </html>
