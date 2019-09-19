@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:show]
   before_action :only_your_profile_page, only: [:show]
 
