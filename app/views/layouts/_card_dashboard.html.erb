@@ -1,0 +1,33 @@
+<div class="col-md-4 mb-5">
+    <div data-toggle="sticky" data-sticky-offset="100" id="card-profile-sticky">
+        <div class="card card-profile border-0 shadow  text-center">
+
+            <% page_type == 'admin' %>
+            <a>
+                <%= image_tag 'partials/neutral.jpeg', class: "card-profile-image avatar shadow", alt: 'card-picture-default' %>
+            </a>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h6 class="mb-0">
+                        <%= @admin.firstname %> <strong>
+                            <%= @admin.lastname %></strong></h6>
+                    <h6 class="mb-0 pt-3">Phone number</h6>
+                    <span class="btn-inner--icon"><i class="fas fa-phone"></i></span>
+                    <span class="text-muted">
+                        <%= @admin.number %></span>
+                    <h6 class="mb-0 pt-3">Email</h6>
+                    <span class="btn-inner--icon"><i class="fas fa-envelope"></i></span>
+                    <span class="text-muted">
+                        <%= @admin.email %></span>
+                </div>
+                <% if current_admin == @admin %>
+                <div class="pt-4 mt-4 delimiter-top">
+                    <div class="btn-group shadow rounded-circle">
+                        <%= link_to '<i class="fas fa-pen"></i> &nbsp; Modifier mon profil'.html_safe, admin_registration_path, class: "btn btn-sm btn-outline-danger btn-circle btn-icon", id: "btn-group-settings"  %></span>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
