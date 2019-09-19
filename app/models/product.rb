@@ -7,8 +7,8 @@ class Product < ApplicationRecord
 	#Description validation: it is mendatory to have an description for a Product
 	validates_length_of :description, minimum: 5
 
-    #Price validation: it is mendatory to have a price for a product and also that price need to be decimal
-    validates :price, numericality: { greater_than_or_equal_to: 0 }
+  #Price validation: it is mendatory to have a price for a product and also that price need to be decimal
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
 
 	#Image_product validation: it is mendatory to have an image for a Product
 	validates :image_product,
@@ -23,7 +23,8 @@ class Product < ApplicationRecord
 	validates :status, inclusion: { in: [ true, false ] }
 
 
-	#Associations: One company belong to one Admin, une sub_sector and one country	
+	#Associations: One product belong to one Company	
 	belongs_to :company
+	delegate :admin, to: :company
 
 end
