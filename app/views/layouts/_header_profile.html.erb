@@ -1,12 +1,4 @@
-<!-- TOP SLICE -->
-<section class="slice slice-lg section-rotate">
-    <div class="section-inner bg-gradient-info">
-        <span class="section-inner-bg"></span>
-    </div>
-</section>
-
-
-<div class="container" id="top-index">
+<div class="slice slice-lg section-rotate slice-lg masthead">
     <div class="row justify-content-end">
         <div class=" col-lg-8">
             <% page_type == 'admin' %>
@@ -15,7 +7,7 @@
                     <span class="h3 mb-0 text-white d-block">
                         <%= @admin.firstname %> <%= @admin.lastname.upcase %></span>
                     <span class="text-light">
-                        <%= @admin.address %></span>
+                        <%= @admin.function %></span>
                         <br>
                         <br>
 
@@ -25,8 +17,8 @@
                                 <i class="bg-orange"></i>Téléphone
                             </span>
                             <span class="d-sm-block h6 text-white font-weight-bold pl-2" href="#">
-                                <%= @admin.phone %>
-                                <small class="far fa-angle-up text-warning"></small>
+                                <%= @admin.number %>
+                                <small class="fas fa-angle-up text-warning"></small>
                             </span>
                         </li>
                         <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
@@ -35,15 +27,12 @@
                             </span>
                             <a class="d-sm-block h6 text-white font-weight-bold pl-2" href="mailto:<%= @admin.email %>?subject=Message en provenance de Mobinawa&body=Bonjour j'aurai besoin d'assitance">
                                 Envoyer un mail
-                                <small class="far fa-angle-up text-success"></small>
+                                <small class="fas fa-angle-up text-success"></small>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            </div>
-            <% end %>
         </div>
     </div>
 </div>
