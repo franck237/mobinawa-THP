@@ -17,4 +17,8 @@ class Admin < ApplicationRecord
   def fullname
   	firstname + " " + lastname
   end
+
+  def welcome_send
+    AdminMailer.welcome_email(self).deliver_now
+  end
 end
