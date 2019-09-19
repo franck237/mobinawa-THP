@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'sectors#index'
 
   resources :admins do
+    get '/dashboard', to: 'admins#dashboard', as: 'dashboard'
     resources :companies do
       resources :products
     end
