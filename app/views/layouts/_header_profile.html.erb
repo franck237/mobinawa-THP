@@ -1,0 +1,49 @@
+<!-- TOP SLICE -->
+<section class="slice slice-lg section-rotate">
+    <div class="section-inner bg-gradient-info">
+        <span class="section-inner-bg"></span>
+    </div>
+</section>
+
+
+<div class="container" id="top-index">
+    <div class="row justify-content-end">
+        <div class=" col-lg-8">
+            <% page_type == 'admin' %>
+            <div class="row align-items-center mb-4">
+                <div class="col-md-12" style="text-align: center;">
+                    <span class="h3 mb-0 text-white d-block">
+                        <%= @admin.firstname %> <%= @admin.lastname.upcase %></span>
+                    <span class="text-light">
+                        <%= @admin.address %></span>
+                        <br>
+                        <br>
+
+                    <ul class="list-inline row justify-content-lg-center mb-0">
+                        <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
+                            <span class="badge badge-dot text-white">
+                                <i class="bg-orange"></i>Téléphone
+                            </span>
+                            <span class="d-sm-block h6 text-white font-weight-bold pl-2" href="#">
+                                <%= @admin.phone %>
+                                <small class="far fa-angle-up text-warning"></small>
+                            </span>
+                        </li>
+                        <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
+                            <span class="badge badge-dot text-white">
+                                <i class="bg-green"></i>Contacter le super_admin Mobinawa
+                            </span>
+                            <a class="d-sm-block h6 text-white font-weight-bold pl-2" href="mailto:<%= @admin.email %>?subject=Message en provenance de Mobinawa&body=Bonjour j'aurai besoin d'assitance">
+                                Envoyer un mail
+                                <small class="far fa-angle-up text-success"></small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
