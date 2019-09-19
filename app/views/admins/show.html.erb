@@ -2,7 +2,7 @@
 
 <h5> 🎭 Your actual Photo 🎭</h5>
 <%if @admin.photo_admin.attached?%>
-  <%= image_tag @admin.photo_admin, alt: 'photo_admin', width: 200, heigth: 200 %>
+  <%= image_tag @admin.thumbnail, alt: 'photo_admin' %>
 <%else%>
   <p>=== You don't have any photo yet ===</p>
 <%end%>
