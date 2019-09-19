@@ -11,6 +11,8 @@ class Admin < ApplicationRecord
 
   belongs_to :country
 
+  #Useful in order to send an email to an admin after creating an account
+  after_create :welcome_send
 
   def fullname
   	firstname + " " + lastname
