@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all   
+    @companies = Company.all.order(:name)
   end
 
   def show
@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(number: params[:number], name: params[:name], email: params[:email], website: params[:website], logo: params[:logo], description: params[:description], sub_sector_id: params[:sub_sector_id], admin_id: params[:admin_id], country_id: params[:country_id])
       if @company.save
-        redirect_to Company_path(@Company.id)
+        redirect_to company_path(@Company.id)
       else
         render 'new'
       end
@@ -25,6 +25,18 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    @Company = Company.destroy
+    @company = Company.destroy
+  end
+
+  def search
+    @companies = Company.all.order(:name)
+    if params[:search].blank?
+      flash[:alert] = "Empty field!"
+      redirect_to companies_path
+      return
+    else
+      @parameter = params[:search].downcase  
+      @results = Company.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+    end
   end
 end

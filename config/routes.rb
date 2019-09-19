@@ -9,16 +9,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :countries do
-    resources :sectors do
-      resources :sub_sectors do
-        resources :companies do
-        resources :products
-        end
-      end
+  resources :sectors do
+    resources :companies do
+      resources :products
     end
   end
 
   resources :companies
   resources :sectors
+  get '/search' => 'companies#search', :as => 'search_companies'
 end

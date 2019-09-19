@@ -3,4 +3,5 @@ class Sector < ApplicationRecord
 	validates :icon, presence: true
 
 	has_many :sub_sectors
+	has_many :companies, through: :sub_sectors
 end
