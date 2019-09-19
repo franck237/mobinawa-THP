@@ -10,12 +10,17 @@ class Admin < ApplicationRecord
   validates :function, presence: true
 
   belongs_to :country
+  has_many :companies
+  has_many :products, through: :companies
+
+  # Active Storage
+  has_one_attached :photo_admin 
 
   #Useful in order to send an email to an admin after creating an account
   after_create :welcome_send
 
   def fullname
-  	firstname + " " + lastname
+  	firstname.capitalize + " " + lastname.upcase
   end
 
   def welcome_send

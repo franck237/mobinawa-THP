@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'homes/index'
-  devise_for :admins
   root to: 'sectors#index'
+  get 'homes/index'
 
+  devise_for :admins 
+
+  resources :admins do
+    resources :photo_admins, only: [:create]
+  end
+  
   resources :countries do
     resources :sectors
   end
@@ -20,6 +25,6 @@ Rails.application.routes.draw do
   end
 
   resources :products
-  
+
   get '/search' => 'companies#search', :as => 'search_companies'
 end
