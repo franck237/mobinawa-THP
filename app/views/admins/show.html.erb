@@ -1,2 +1,13 @@
-<h1>Admins#show</h1>
-<p>Find me in app/views/admins/show.html.erb</p>
+<h3>Welcome <%= @admin.fullname %>,</h3>
+
+<h5> 🎭 Your actual Photo 🎭</h5>
+<%if @admin.photo_admin.attached?%>
+  <%= image_tag @admin.photo_admin, alt: 'photo_admin', width: 200, heigth: 200 %>
+<%else%>
+  <p>=== You don't have any photo yet ===</p>
+<%end%>
+<h3>Do you want to change your Photo ?</h3>
+<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
+  <%= file_field_tag :photo_admin %>
+  <%= submit_tag "Update" %>
+<% end %>

@@ -63,7 +63,7 @@ class AdminsController < ApplicationController
       @admin = Admin.find(params[:id])
     
       if current_admin != @admin
-        redirect_to sectors_path, notice: "Access denied! You can only view your own profile page."
+        redirect_to admin_path, notice: "Access denied! You can only view your own profile page."
       end
     end
 
