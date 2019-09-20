@@ -14,8 +14,8 @@ before_action :authenticate_admin!, except: [:index, :show]
 
   def create
     @product = Product.new(product_params)
-    if @photo.photo_product.present?
-    @product.image_product = @product.photo_product
+    if @product.photo_products.attached?
+    @product.image_product = @product.photo_products
     end
       if @product.save
         redirect_to @product, notice: 'Product was successfully created.'

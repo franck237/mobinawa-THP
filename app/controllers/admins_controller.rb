@@ -54,7 +54,7 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:firstname, :lastname, :number, :function, :email, :encrypted_password, :country_id, :photo_admin)
+      params.require(:admin).permit(:firstname, :lastname, :number, :function, :email, :encrypted_password, :country_id)
     end
 
     #An admin can not acces the dashboard of another admin
