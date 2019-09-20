@@ -1,2 +1,92 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<!-- MAIN WRAPPER -->
+<div class="body-wrap shop-default shop-minimalist">
+    <div id="st-container" class="st-container">
+        <div class="st-pusher">
+            <div class="st-content">
+                <div class="st-content-inner">
+
+                    	<section class="slice bg-minimalist">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="swiper-js-container">
+                                        <div class="swiper-container" data-swiper-products="1" data-swiper-space-between="0">
+                                            <div class="swiper-wrapper pb-5">
+                                                <div class="swiper-slide">                   
+                                                        <%= image_tag(@product.image_product) %>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <%= image_tag 'mobilogo.png', class: "img-fluid"%>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <%= image_tag(@product.image_product) %>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 ml-lg-auto">
+                                    <div class="product-description-wrapper">
+                                        <!-- Product title -->
+                                        <h2 class="heading heading-4 strong-600 text-capitalize">
+                                            <%= @product.title %>
+                                        </h2>
+                                        <span class="heading heading-light heading-5 strong-600 mt-3">
+                                            <%= @product.price %> €
+                                        </span>
+                                        <!-- Product description -->
+                                        <div class="product-short-text">
+                                            <p>
+                                                <%= @product.description %>
+                                            </p>
+
+                                        <!-- Social Links -->
+                                            <ul class="inline-links inline-links--style-1 mt-4">
+                                                <li>
+                                                    <a href="#">Twitter</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Facebook</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Instagram</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="form-default">
+                                                    <div class="row mt-2">
+                                                        <div class="col-md-6">
+                                                            <span>Quantity to order : (fast delivering)</span>
+                                                    
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control form-control-lg text-center" value="1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-12">
+                                                            <!-- Add to cart button -->
+                                                            <button type="button" class="btn btn-lg btn-block btn-gray-dark btn-icon-left">
+                                                                <i class="icon ion-bag"></i> Add to cart
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div><!-- END: st-content-inner -->
+        </div><!-- END: st-pusher -->
+    </div><!-- END: st-container -->
+</div><!-- END: body-wrap -->

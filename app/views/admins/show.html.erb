@@ -1,53 +1,14 @@
 
- <%= render partial: 'layouts/header_profile', locals: {page_type: 'admin'} %>
-    <section class="pt-5 pt-lg-0 bg-transparent">
-        <div class="container">
-            <div class="row">
+<h3>Welcome <%= @admin.fullname %>,</h3>
 
-                <%= render partial: 'layouts/card_dashboard', locals: {page_type: 'admin'} %>
-
-                <div class="col-md-8 mt-lg-5 mb-5">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- Badges -->
-                            <div class="d-lg-flex">
-                                <a class="media d-flex align-items-center mb-3 mb-lg-0">
-                                    <div class="icon icon-sm icon-shape rounded-circle icon-red">
-                                        <i class="fas fa-warehouse"></i>
-                                    </div> &nbsp; <div class="media-body pl-2">
-                                        <span class="h6">
-                                            <%= @admin.companies.count %> société(s)</span>
-                                    </div>
-                                </a>
-                            </div>
-                                
-                                <div class="pt-5 mt-5 delimiter-top">
-                                    <h6>
-                                        <div class="icon icon-sm icon-shape rounded-circle icon-red">
-                                            <i class="fas fa-warehouse"></i>
-                                        </div> &nbsp; société(s)
-                                    </h6>
-                                    <div class="row">
-                                        <% @admin.companies.each do |company| %>
-                                        <div class="col-lg-6 mt-4">
-                                            <div class="card bg-secondary shadow-sm border-0">
-                                                <div class="media align-items-center p-3">
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-sm mb-0"> <a href="<%=company_path(company)%>">
-                                                                <%= company.name %></a></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <% end %>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
+<h5> 🎭 Your actual Photo 🎭</h5>
+<%if @admin.photo_admin.attached?%>
+  <%= image_tag @admin.photo_admin, alt: 'photo_admin', width: 200, heigth: 200 %>
+<%else%>
+  <p>=== You don't have any photo yet ===</p>
+<%end%>
+<h3>Do you want to change your Photo ?</h3>
+<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
+  <%= file_field_tag :photo_admin %>
+  <%= submit_tag "Update" %>
+<% end %>
