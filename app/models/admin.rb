@@ -19,7 +19,7 @@ class Admin < ApplicationRecord
   after_create :welcome_send
 
   def fullname
-  	firstname.capitalize + " " + lastname.upcase
+  	firstname.capitalize + " " + lastname.capitalize
   end
 
   def welcome_send
