@@ -4,7 +4,7 @@
       <div class="col-md-6 offset-md-3" style="background-color: white">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <br><h6 class="h3 mb-3 font-weight-normal text-center " style="color: #424140">Connexion</h6>
-              <p class="text-muted mb-0 text-center">Bienvenue sur votre espace admin Mobinawa</p><br>
+              <p class="text-muted mb-0 text-center">Only for an Admin</p><br>
           <%= devise_error_messages! %>
 
               <span class="clearfix"></span>
@@ -47,7 +47,7 @@
                        <span class="btn-inner--text"><%= link_to "home page", root_path %></span>
                        </button>
                          <div class="col-sm-5 text-sm-right">
-                           <span class="small d-sm-block d-md-inline" style="color: grey">Déjà inscrit ?</span><br>
+                           <span class="small d-sm-block d-md-inline" style="color: grey">Already an admin ?</span><br>
                              <%= render "devise/shared/links" %> 
                              <br><br><br>
                          </div>
