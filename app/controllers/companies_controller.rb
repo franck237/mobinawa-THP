@@ -13,12 +13,20 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new(number: params[:number], name: params[:name], email: params[:email], website: params[:website], logo: params[:logo], description: params[:description], sub_sector_id: params[:sub_sector_id], admin_id: params[:admin_id], country_id: params[:country_id])
+    @company = Company.new(company_params)
+    if @company.photo_companies.present?
+    @company.logo = @company.photo_companies
+    end
       if @company.save
         redirect_to company_path(@Company.id)
       else
         render 'new'
       end
+  end
+
+  def edit
+    @company = Company.find(params[:id])
+    @admin = @company.admin
   end
 
   def update
@@ -40,5 +48,11 @@ class CompaniesController < ApplicationController
       @parameter = params[:search].downcase  
       @results = Company.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
     end
+  end
+
+  private
+
+  def company_params
+    params.require(:company).permit(:number, :name, :email, :website, :logo, :description, :sub_sector_id, :admin_id, :country_id)
   end
 end

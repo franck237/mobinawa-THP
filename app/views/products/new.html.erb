@@ -9,7 +9,7 @@
 							<p>Impossiblede créer l'objet</p>
 						</div>
 						<% end %>-->
-						<%= form_tag new_admin_company_product_path, multipart: true do %>
+						<%= form_tag products_path, multipart: true do %>
 							<div class='form-group'>
 								<%= label_tag 'Choose a company' %>
 								<%= text_field_tag :company_id, nil, class:'form-control' %>
