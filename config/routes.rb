@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   devise_for :admins 
 
   resources :admins do
+    get '/dashboard', to: 'admins#dashboard', as: 'dashboard'
+    resources :companies do
+      resources :products
+    end
+
     resources :photo_admins, only: [:create]
   end
 

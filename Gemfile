@@ -78,6 +78,9 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'table_print'
 
+#JQuery for rails
+gem 'jquery-rails'
+
 # Gem swiper for buttons icons
 gem 'swiper-rails'
 
