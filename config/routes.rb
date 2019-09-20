@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   resources :countries do
     resources :sectors
+  end
 
   resources :countries, :sectors do
     resources :sub_sectors
