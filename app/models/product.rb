@@ -26,5 +26,6 @@ class Product < ApplicationRecord
 	#Associations: One product belong to one Company	
 	belongs_to :company
 	delegate :admin, to: :company
+	has_many_attached :photo_products
 
 end
