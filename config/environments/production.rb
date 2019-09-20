@@ -102,5 +102,5 @@ config.assets.digest = true
   config.active_record.dump_schema_after_migration = false
 
   # If false, no email will be sent by the app
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
 end
