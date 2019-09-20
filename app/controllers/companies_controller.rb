@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_admin!, only: [:new]
+
   def index
     @companies = Company.all.order(:name)
   end
