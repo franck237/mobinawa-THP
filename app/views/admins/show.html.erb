@@ -7,8 +7,10 @@
         </div>
     </section>
     <br>
-    <div style="text-align: center;">
-				<%if @admin.companies.length > 1 %>
+    <div style="text-align: center; marge-bottom: 100px">
+    		<%if @admin.companies.length == 0 %>
+    		<h3> 🏢  Create a new company here (Available soon) 🏢</h3>
+				<%elsif @admin.companies.length > 1 %>
 					<h3> 🏢  Below are your companies :  🏢</h3>
 				<%else%>
 					<h3> 🏢  Below is your company  🏢</h3>
