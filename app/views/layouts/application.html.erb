@@ -22,7 +22,7 @@
                 <div class="st-content-inner">                
                   <div class="header">
                     <!-- Navbar -->
-                    <nav class="navbar navbar-expand-lg navbar--bold navbar--style-2 navbar-light bg-default  navbar--bb-1px">
+                    <nav class="navbar navbar-expand-lg navbar--bold navbar--style-2 navbar-light bg-default  navbar--bb-1px fixed-top">
                       <div class="container navbar-container">
                         <!-- Brand/Logo -->
                         <%= link_to image_tag("logo/mobinawa.png", width: 100), sectors_path, class: "navbar-brand" %>
@@ -42,7 +42,7 @@
                                   <%= link_to 'Home', homes_index_path, class: "nav-link btn mr-1"  %>
                               </li>                            
                               <li class="nav-item dropdown megamenu">
-                                  <%= link_to 'New item', new_company_path, class: "nav-link btn mr-1"  %>
+                                  <%= link_to 'Register your company', new_company_path, class: "nav-link btn mr-1"  %>
                               </li>
                           </ul>
                           <ul class="navbar-nav ml-lg-auto">
