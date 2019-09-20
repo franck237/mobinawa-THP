@@ -3,8 +3,22 @@
         <div class="container">
             <div class="row">
 
+
+<h5> 🎭 Your actual Photo 🎭</h5>
+<%if @admin.photo_admin.attached?%>
+  <%= image_tag @admin.thumbnail, alt: 'photo_admin' %>
+<%else%>
+  <p>=== You don't have any photo yet ===</p>
+<%end%>
+<h3>Do you want to change your Photo ?</h3>
+<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
+  <%= file_field_tag :photo_admin %>
+  <%= submit_tag "Update" %>
+<% end %>
+
                 <%= render partial: 'layouts/card_dashboard' %>
             </div>
         </div>
     </section>
 </div>
+

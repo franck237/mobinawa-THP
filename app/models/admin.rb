@@ -25,4 +25,8 @@ class Admin < ApplicationRecord
   def welcome_send
     AdminMailer.welcome_email(self).deliver_now
   end
+
+  def thumbnail
+    return self.photo_admin.variant(resize: '200x200').processed
+  end
 end
