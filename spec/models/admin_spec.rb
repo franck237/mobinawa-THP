@@ -21,10 +21,6 @@ before(:each) do
       it { expect(@admin).to validate_presence_of(:number) }
     end
 
-    describe "#password" do
-      it { expect(@admin).to validate_length_of(:password).is_at_least(8) }
-    end
-
     describe "#firstname" do
       it { expect(@admin).to validate_presence_of(:firstname) }
     end
