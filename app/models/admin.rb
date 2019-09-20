@@ -4,7 +4,6 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :number, presence: true
-  validates :password, length: { minimum: 8 }
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :function, presence: true
