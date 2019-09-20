@@ -12,14 +12,20 @@
                                     <div class="swiper-js-container">
                                         <div class="swiper-container" data-swiper-products="1" data-swiper-space-between="0">
                                             <div class="swiper-wrapper pb-5">
-                                                <div class="swiper-slide">                   
-                                                        <%= image_tag(@product.image_product) %>
+                                                <div class="swiper-slide">
+                                                  	<%= image_tag(product.photo_product) %>
+                                                    <%else%>
+										                                  <%= image_tag(@product.image_product) %>
+										                                <%end%>                                         
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <%= image_tag 'mobilogo.png', class: "img-fluid"%>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <%= image_tag(@product.image_product) %>
+                                                    <%= image_tag(product.photo_product) %>
+                                                    <%else%>
+										                                  <%= image_tag(@product.image_product) %>
+										                                <%end%> 
                                                 </div>
                                             </div>
                                             <div class="swiper-pagination"></div>
