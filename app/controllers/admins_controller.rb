@@ -30,7 +30,6 @@ class AdminsController < ApplicationController
   end
 
   def update
-    respond_to
       if @admin.update(admin_params)
          redirect_to @admin, notice: 'Admin was successfully updated.'
       
