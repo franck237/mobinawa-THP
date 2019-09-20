@@ -9,13 +9,16 @@ before_action :authenticate_admin!, except: [:index, :show]
   end
 
   def new
-    @product = Product.new 
+    @product = Product.new
   end
 
   def create
-    @product = Product.new(title: params[:title], description: params[:description], price: params[:price], image_product: params[:image_product], quantity: params[:quantity], status: params[:status])
+    @product = Product.new(product_params)
+    if @photo.photo_product.present?
+    @product.image_product = @product.photo_product
+    end
       if @product.save
-        redirect_to admin_product_path(@product.id)
+        redirect_to @product, notice: 'Product was successfully created.'
       else
         render 'new'
       end
@@ -27,7 +30,12 @@ before_action :authenticate_admin!, except: [:index, :show]
 
   def destroy
     @product = Product.destroy
+  end
 
+  private
+
+  def product_params
+    params.require(:product).permit(:title, :description, :price, :image_product, :quantity, :status, :company_id, :photo_product)  
   end
 
 end

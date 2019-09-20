@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'photo_products/create'
   root to: 'sectors#index'
   get 'homes/index'
 
@@ -12,6 +13,12 @@ Rails.application.routes.draw do
 
     resources :photo_admins, only: [:create]
   end
+
+  resources :admins do
+    resources :companies do
+      resources :products
+    end
+  end
   
   resources :countries do
     resources :sectors
@@ -21,15 +28,19 @@ Rails.application.routes.draw do
     resources :sub_sectors
   end
 
-  resources :countries, :sectors, :sub_sectors, :admins do
+  resources :countries, :sectors, :sub_sectors do
     resources :companies
   end
 
-  resources :countries, :sectors, :sub_sectors, :admins, :companies do
+  resources :countries, :sectors, :sub_sectors, :admins do
     resources :products
   end
 
-  resources :products
+  resources :products do
+    resources :photo_products, only: [:create]
+  end
+
+  resources :companies
 
   get '/search' => 'companies#search', :as => 'search_companies'
 end

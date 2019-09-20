@@ -2,23 +2,52 @@
     <section class="pt-5 pt-lg-0 bg-transparent">
         <div class="container">
             <div class="row">
-
-
-<h5> 🎭 Your actual Photo 🎭</h5>
-<%if @admin.photo_admin.attached?%>
-  <%= image_tag @admin.thumbnail, alt: 'photo_admin' %>
-<%else%>
-  <p>=== You don't have any photo yet ===</p>
-<%end%>
-<h3>Do you want to change your Photo ?</h3>
-<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
-  <%= file_field_tag :photo_admin %>
-  <%= submit_tag "Update" %>
-<% end %>
-
                 <%= render partial: 'layouts/card_dashboard' %>
             </div>
         </div>
     </section>
 </div>
 
+<div style="text-align: center;">
+	<h3>Welcome <%= @admin.fullname %>,</h3>
+		<h5> 🎭 Your actual Photo 🎭</h5>
+			<%if @admin.photo_admin.attached?%>
+  			<%= image_tag @admin.thumbnail, alt: 'photo_admin' %>
+			<%else%>
+  			<p>=== You don't have any photo yet ===</p>
+			<%end%>
+				<h6>Do you want to change your Photo ?</h6>
+				<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
+				 	<%= file_field_tag :photo_admin, class: "btn btn-primary" %>
+				  <%= submit_tag "Update", class: "btn btn-primary" %>
+				<% end %>
+				<br>
+				<%if @admin.companies.length > 1 %>
+					<h5> 🎭 Below are your companies : 🎭</h5>
+				<%else%>
+					<h5> 🏢 Below is your company 🏢</h5>
+				<%end%>
+				<!-- List of companies in the company -->
+					<div class="row-wrapper">
+						<div class="row cols-xs-space cols-sm-space cols-md-space">
+							<% @admin.companies.each do |company| %>
+								<div class="card" style="width: 92%; margin: auto;">
+								  <div class="row no-gutters">
+								    <div class="col-2 col-lg-1 align-self-center">
+								      <div class="card-img">
+								      	<span style="margin-left: 5px;"><%= link_to image_tag(company.logo, width: 75, height: 70), admin_company_path(company.id) %></span>
+								    	</div>
+								    </div>
+								    <div class="col">
+								      <div class="card-body" style="padding: 5px 25px">
+								        <h5 class="card-title" style="margin-bottom: 0; font-weight: bold;"><%= link_to (company.name), admin_company_path(company.id) %></h5>
+								        <h6 class="card-text" style="margin-bottom: 0; color: orange"><%= company.sub_sector.name %></h6>
+								        <p class="card-text font-weight-normal c-gray"><%= company.description %></p>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+							<%end%>
+						</div>
+					</div>
+</div>

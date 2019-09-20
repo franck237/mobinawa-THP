@@ -68,21 +68,21 @@ Country.reset_pk_sequence
 		2.times do
 			firstname = Faker::Name.first_name
 			lastname = Faker::Name.last_name
-			admin = Admin.create!(number: "06" + Faker::Number.number(digits: france.digit - 2).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: Faker::Internet.password(min_length: 8), firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: france.id)
+			admin = Admin.create!(number: "06" + Faker::Number.number(digits: france.digit - 2).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: "012345678", firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: france.id)
 			company = Company.create!(number: Faker::Number.leading_zero_number(digits: france.digit), name: Faker::Company.name, email: "contact" + e.to_s + "@" + Faker::Internet.domain_name, website: "www." + Faker::Internet.domain_name, logo: Faker::Company.logo, status: 1, description: Faker::Company.catch_phrase, sub_sector_id: sub_sectors[i].id, admin_id: admin.id, country_id: france.id)
 			2.times do
 			product = Product.create!(title: Faker::Commerce.product_name, description: Faker::Lorem.sentence(word_count: 7, supplemental: false, random_words_to_add: 4), price: Faker::Commerce.price(range: 0..30, as_string: false), image_product: Faker::Avatar.image(size: "200x200", format: "jpg"), quantity: rand(20), status: true, company_id: company.id)
 			end
 			firstname = Faker::Name.first_name
 			lastname = Faker::Name.last_name
-			admin = Admin.create!(number: "6" + Faker::Number.number(digits: cameroun.digit - 1).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: Faker::Internet.password(min_length: 8), firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: cameroun.id)
+			admin = Admin.create!(number: "6" + Faker::Number.number(digits: cameroun.digit - 1).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: "012345678", firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: cameroun.id)
 			company = Company.create!(number: "2" + Faker::Number.leading_zero_number(digits: cameroun.digit - 1).to_s, name: Faker::Company.name, email: "contact" + e.to_s + "@" + Faker::Internet.domain_name, website: "www." + Faker::Internet.domain_name, logo: Faker::Company.logo, status: 1, description: Faker::Company.catch_phrase, sub_sector_id: sub_sectors[i].id, admin_id: admin.id, country_id: cameroun.id)
 			2.times do
 			product = Product.create!(title: Faker::Commerce.product_name, description: Faker::Lorem.sentence(word_count: 7, supplemental: false, random_words_to_add: 4), price: Faker::Commerce.price(range: 0..30, as_string: false), image_product: Faker::Avatar.image(size: "200x200", format: "jpg"), quantity: rand(20), status: true, company_id: company.id)
 			end
 			firstname = Faker::Name.first_name
 			lastname = Faker::Name.last_name
-			admin = Admin.create!(number: "6" + Faker::Number.leading_zero_number(digits: nigeria.digit - 1).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: Faker::Internet.password(min_length: 8), firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: nigeria.id)
+			admin = Admin.create!(number: "6" + Faker::Number.leading_zero_number(digits: nigeria.digit - 1).to_s, email: firstname + "." + lastname + "@" + Faker::Internet.domain_name, password: "012345678", firstname: firstname, lastname: lastname, function: Faker::Company.profession, country_id: nigeria.id)
 			company = Company.create!(number: "3" + Faker::Number.leading_zero_number(digits: nigeria.digit - 1).to_s, name: Faker::Company.name, email: "contact" + e.to_s + "@" + Faker::Internet.domain_name, website: "www." + Faker::Internet.domain_name, logo: Faker::Company.logo, status: 1, description: Faker::Company.catch_phrase, sub_sector_id: sub_sectors[i].id, admin_id: admin.id, country_id: nigeria.id)
 			2.times do
 			product = Product.create!(title: Faker::Commerce.product_name, description: Faker::Lorem.sentence(word_count: 7, supplemental: false, random_words_to_add: 4), price: Faker::Commerce.price(range: 0..30, as_string: false), image_product: Faker::Avatar.image(size: "200x200", format: "jpg"), quantity: rand(20), status: true, company_id: company.id)

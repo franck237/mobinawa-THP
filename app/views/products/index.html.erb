@@ -22,7 +22,11 @@
 											                    <div class="block product bg-transparent no-radius">
 											                        <div class="product-image">
 											                            <div class="view view-first">
+											                            	<%if product.photo_product.attached?%>
+                                                        <%= link_to image_tag(product.photo_product), product_path(product.id), alt: 'photo_product' %>
+                                                      <%else%>
 											                                  <%= link_to image_tag(product.image_product), product_path(product.id) %>
+											                                <%end%>
 											                            </div>
 
 											                            <div class="product-actions--a product-actions--2" data-animation-in="slideInRight"  data-animation-out="slideOutRight">

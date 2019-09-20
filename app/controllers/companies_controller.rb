@@ -22,7 +22,8 @@ class CompaniesController < ApplicationController
   end
 
   def update
-  
+    @company = Company.find(params[:id])
+    @admin = @company.admin_id
   end
 
   def destroy
