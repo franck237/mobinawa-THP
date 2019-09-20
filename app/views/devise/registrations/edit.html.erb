@@ -8,7 +8,19 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
               <div class="field">
-                <label class="form-control-label ">First  Name *</label>
+                <label class="form-control-label ">Photo</label>
+                   <div class="input-group input-group-transparent">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-upload"></i></span>
+                      </div>
+                      <%= f.file_field :photo_admin, class: "form-control form-control-label", autofocus: true%>
+                   </div>
+              </div>
+
+
+
+              <div class="field">
+                <label class="form-control-label ">First  Name</label>
                    <div class="input-group input-group-transparent">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -17,7 +29,7 @@
                    </div>
               </div>
               <div class="form-group">
-                <label class="form-control-label ">Last  Name *</label>
+                <label class="form-control-label ">Last  Name </label>
                    <div class="input-group input-group-transparent">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -27,7 +39,7 @@
               </div>
 
               <div class="form-group">
-                <label class="form-control-label">Phone number *</label>
+                <label class="form-control-label">Phone number</label>
                    <div class="input-group input-group-transparent">
                       <div class="input-group-prepend">
                          <span class="input-group-text"><i class="fas fa-mobile"></i></span>
@@ -39,7 +51,7 @@
 
 
               <div class="form-group">
-                <label class="form-control-label ">Company Title *</label>
+                <label class="form-control-label ">Company Title</label>
                    <div class="input-group input-group-transparent">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-building"></i></span>
@@ -51,7 +63,7 @@
 
               <span class="clearfix"></span>
                <div class="form-group">
-                 <label class="form-control-label">Email address *</label>
+                 <label class="form-control-label">Email address</label>
                      <div class="input-group input-group-transparent">
                         <div class="input-group-prepend">
                            <span class="input-group-text"><i class="fas fa-paper-plane"></i></span>
@@ -64,19 +76,19 @@
                <% end %>
 
               <div class="form-group mb-4">
-                <label class="form-control-label">Password * (8 characters minimum)</label> <i style="color: grey">leave blank if you don't want to change it</i><br />
+                <label class="form-control-label">Password (6 characters minimum)</label> <i style="color: grey">leave blank if you don't want to change it</i><br />
                    <% if @minimum_password_length %>
                    <div class="input-group input-group-transparent">
                        <div class="input-group-prepend">
                            <span class="input-group-text"><i class="fas fa-key"></i></span>
                       </div>
-                        <%= f.password_field :password, class: "form-control", id: "input-password", autocomplete: "new-password", placeholder: "********"  %>
+                        <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "********"  %>
                     </div>
               </div>
 
 
               <div class="form-group">
-                 <label class="form-control-label">Confirm your password *</label>
+                 <label class="form-control-label">Confirm your password </label><i style="color: grey"> leave blank if you didn't change it</i><br />
                      <div class="input-group input-group-transparent">
                          <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -96,13 +108,16 @@
                         <%= f.password_field :current_password, class: "form-control", id: "input-password", autocomplete: "current-password", placeholder: "********"  %>
                     </div>
               </div>
+              
 
+              <div class="actions mt-5">
+                  <%= f.submit "Update my Profile", class: "btn btn-lg btn-primary btn-block"  %>
+                </div>
+              <% end %>
+              <% end %>
+              <% end %>
 
               <div class="mt-3">
-                  <div class="d-flex justify-content-center actions" id="button_create_account">
-                      <%= f.submit  "Update" , class: "btn btn-primary mb-3 mb-sm-0" %>
-                  </div>
-                  <br>
                   <div class="d-flex justify-content-between align-items-center">
                     <button type="button" class="btn btn-light btn-icon">
                        <span class="btn-inner--icon"><i class="fas fa-arrow-left"></i></span>
@@ -115,10 +130,6 @@
                          </div>
                   </div>
               </div>
-  
-        <% end %> 
-        <% end %>
-        <% end %>
       </div>
     </div>
   </div>
