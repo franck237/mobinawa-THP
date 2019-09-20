@@ -1,2 +1,16 @@
 <h1>Companies#new</h1>
 <p>Find me in app/views/companies/new.html.erb</p>
+<h1>New Company Page</h1>
+
+<p>Welcome <%= current_admin.firstname %>, you can create your company in the Mobinawa network here : </p>
+
+<%if @company.photo_companies.attached?%>
+  <%= image_tag @company.photo_companies, alt: 'photo_companies' %>
+<%else%>
+  <h3>Please add your logo :</h3>
+<%end%>
+
+<%= form_tag new_company_path, multipart: true do %>
+  <%= file_field_tag :photo_companies %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>

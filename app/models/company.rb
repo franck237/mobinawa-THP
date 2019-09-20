@@ -20,4 +20,7 @@ validates :status, inclusion: { in: [ 0, 1, 2 ] }
   belongs_to :admin
   belongs_to :country
   has_many :products
+
+ #Active Storage:
+ has_many_attached :photo_companies
 end

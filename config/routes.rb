@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
-  get 'photo_products/create'
   root to: 'sectors#index'
   get 'homes/index'
+  get '/search' => 'companies#search', :as => 'search_companies'
 
   devise_for :admins 
 
   resources :admins do
     get '/dashboard', to: 'admins#dashboard', as: 'dashboard'
-    resources :companies do
-      resources :products
-    end
-
     resources :photo_admins, only: [:create]
-  end
-
-  resources :admins do
     resources :companies do
       resources :products
     end
@@ -40,7 +33,8 @@ Rails.application.routes.draw do
     resources :photo_products, only: [:create]
   end
 
-  resources :companies
-
-  get '/search' => 'companies#search', :as => 'search_companies'
+  resources :companies do
+    resources :photo_companies, only: [:create]
+  end
+  
 end

@@ -6,26 +6,12 @@
             </div>
         </div>
     </section>
-</div>
-
-<div style="text-align: center;">
-	<h3>Welcome <%= @admin.fullname %>,</h3>
-		<h5> 🎭 Your actual Photo 🎭</h5>
-			<%if @admin.photo_admin.attached?%>
-  			<%= image_tag @admin.thumbnail, alt: 'photo_admin' %>
-			<%else%>
-  			<p>=== You don't have any photo yet ===</p>
-			<%end%>
-				<h6>Do you want to change your Photo ?</h6>
-				<%= form_tag admin_photo_admins_path(@admin), multipart: true do %>
-				 	<%= file_field_tag :photo_admin, class: "btn btn-primary" %>
-				  <%= submit_tag "Update", class: "btn btn-primary" %>
-				<% end %>
-				<br>
+    <br>
+    <div style="text-align: center;">
 				<%if @admin.companies.length > 1 %>
-					<h5> 🎭 Below are your companies : 🎭</h5>
+					<h3> 🎭 Below are your companies : 🎭</h3>
 				<%else%>
-					<h5> 🏢 Below is your company 🏢</h5>
+					<h3> 🏢 Below is your company 🏢</h3>
 				<%end%>
 				<!-- List of companies in the company -->
 					<div class="row-wrapper">
@@ -50,4 +36,5 @@
 							<%end%>
 						</div>
 					</div>
+			</div>
 </div>
