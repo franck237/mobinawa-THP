@@ -26,8 +26,17 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # Disable Rails's static asset server (Apache or nginx will already do this)  
+config.serve_static_assets = false
+
+# Compress JavaScripts and CSS  
+config.assets.compress = true
+
+# Don't fallback to assets pipeline if a precompiled asset is missed  
+config.assets.compile = false
+
+# Generate digests for assets URLs  
+config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -64,7 +73,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "mobinawa_testing_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-
+  config.action_mailer.default_url_options = { :host => 'mobinawa.herokuapp.com' }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -91,4 +100,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # If false, no email will be sent by the app
+  config.action_mailer.perform_deliveries = true
 end

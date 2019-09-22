@@ -1,0 +1,42 @@
+<div class="col-md-4 mb-5 " >
+    <div data-toggle="sticky" data-sticky-offset="100" id="card-profile-sticky" >
+        <div class="card card-profile border-0 shadow  text-center">
+
+            <%if @admin.photo_admin.attached?%>
+            <a>
+                <%= image_tag @admin.photo_admin, class: "card-profile-image avatar shadow", style: 'height: 150px; width: auto', alt: 'photo_admin' %>
+            </a>
+            <% else %>
+            <a>
+                <%= image_tag "logo/mobinawa_small.png", class: "card-profile-image avatar shadow", alt: 'card-picture-default', width: 150, height: 150 %>
+            </a>
+            <%end%>
+            <div class="card-body">
+                <div class="mb-3" style="color: grey">
+                    <h6 class="mb-0" >
+                    <strong><%= @admin.fullname %></strong></h6>
+                    <h6 class="mb-0 pt-3">Phone number</h6>
+                    <span class="btn-inner--icon"><i class="fas fa-mobile"></i></span>
+                    <span class="text-muted">
+                        <%= @admin.number %></span>
+                    <h6 class="mb-0 pt-3">Email</h6>
+                    <span class="btn-inner--icon"><i class="fas fa-envelope"></i></span>
+                    <span class="text-muted">
+                        <%= @admin.email %></span>
+                </div>
+                <% if current_admin == @admin %>
+                <div class="pt-4 mt-4 delimiter-top">
+                    <div class="btn-group shadow rounded-circle">
+                        <%= link_to '<i class="fas fa-pen"></i> &nbsp; Modifier mon profil'.html_safe, edit_admin_registration_path, class: "btn btn-sm btn-outline-danger btn-circle btn-icon", id: "btn-group-settings"  %></span>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8 mb-7 text-center" >
+<br><br><br><br><h1> Welcome <%= @admin.fullname %></h1>
+<h3>This is your profile page</h3>
+</div>

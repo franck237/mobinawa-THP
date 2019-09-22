@@ -1,0 +1,36 @@
+<section class="slice-lg masthead" style="padding-top: 30px">
+	<!-- Name of the Sector -->
+		<h3 style="margin: auto; text-align: center; margin-bottom: 1.5rem">Glossary of <%= @sector.name %></h3>
+			<!-- Search bar real -->
+        <%= form_tag(search_companies_path, :method => "get", class: 'p-1 bg-light rounded rounded-pill shadow-sm mb-4', style: 'width:75%; margin: auto') do %>  
+          <div class="input-group">
+              <%= search_field_tag :search, params[:search], placeholder: "Enter the name of the company here", class: "form-control border-0 bg-light" %>
+              <div class="input-group-append">
+                <%= button_tag "", :class => 'btn btn-link text-primary fa fa-search',:name => nil%>
+              </div>
+          </div>
+       	<% end %>
+				<!-- List of companies in the Sector -->
+				<div class="row-wrapper">
+					<div class="row cols-xs-space cols-sm-space cols-md-space">
+						<% @companies.each do |company| %>
+							<div class="card" style="width: 90%; margin: auto;">
+							  <div class="row no-gutters">
+							    <div class="col-2 col-lg-1 align-self-center">
+							      <div class="card-img">
+							      	<span style="margin-left: 5px;"><%= link_to image_tag(company.logo, width: 75, height: 70), sector_company_path(company.id) %></span>
+							    	</div>
+							    </div>
+							    <div class="col">
+							      <div class="card-body" style="padding: 5px 25px">
+							        <h5 class="card-title" style="margin-bottom: 0; font-weight: bold;"><%= link_to (company.name), sector_company_path(company.id) %></h5>
+							        <h6 class="card-text" style="margin-bottom: 0; color: orange"><%= company.sub_sector.name %></h6>
+							        <p class="card-text font-weight-normal c-gray"><%= company.description %></p>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						<%end%>
+					</div>
+				</div>
+</section>

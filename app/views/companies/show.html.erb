@@ -1,0 +1,369 @@
+<!-- MAIN WRAPPER -->
+<div class="body-wrap">
+    <div id="st-container" class="st-container">
+        <div class="st-pusher">
+            <div class="st-content">
+
+<!-- Section of the company -->
+<div class="card" style="max-width: 540px; border-style: none">
+  <div class="row no-gutters">
+    <div class="col-2 align-self-center">
+      <div class="card-img">
+      	<span style="margin-left: 5px;"><%= image_tag(@company.logo, width: 80, height: 70) %></span> 
+    	</div>
+    </div>
+    <div class="col">
+      <div class="card-body" style="padding: 5px 25px">
+        <h5 class="card-title" style="margin-bottom: 0; font-weight: bold; color: orange"><%= @company.name %></h5>
+        <h6 class="card-text" style="margin-bottom: 0"><%= @company.sub_sector.sector.name %></h6>
+        <p class="card-text font-weight-normal"><%= @company.sub_sector.name %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Tabs Navbar Boomerang -->
+  <div class="tabs tabs--style-2" role="tabpanel">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" style="padding: 0px 10px">
+        <li class="nav-item" role="presentation">
+            <a href="#tabTwo-1" aria-controls="overview" role="tab" data-toggle="tab" class="nav-link active text-center text-normal strong-600">Overview</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a href="#tabTwo-2" aria-controls="photo" role="tab" data-toggle="tab" class="nav-link text-center text-normal strong-600">Photos</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a href="#tabTwo-3" aria-controls="products" role="tab" data-toggle="tab" class="nav-link text-center text-normal strong-600">Products</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a href="#tabTwo-4" aria-controls="pointofsale" role="tab" data-toggle="tab" class="nav-link text-center text-normal strong-600">Location</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tabTwo-1">
+            <div class="tab-body" style="padding: 0px 15px">
+                
+          					<!-- Icons Call, Chat, Web, Services -->
+                    <section class="slice-xs border-bottom" style="padding: 0px">
+                        <div class="container container-sm">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="icon-block icon-block--style-1-v5 text-center active">                                    	
+                                        <div class="block-icon mb-0">
+                                        	<div style="font-size: 1.5rem;">
+                                           	<i class="fas fa-phone-alt" style="border: 2px solid blue; padding: 10px; border-radius: 10px"></i>
+                                        	</div>
+                                       	</div>
+                                        <div class="block-content d-md-block">
+                                            <h3 class="heading heading-sm strong-300 c-blue text-uppercase" style="margin-top: 10px;">Call</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="icon-block icon-block--style-1-v5 text-center active">
+                                        <div class="block-icon mb-0">
+                                        	<div style="font-size: 1.5rem;">
+                                            <i class="fas fa-comments" style="border: 2px solid blue; padding: 10px; border-radius: 10px"></i>
+                                        	</div>
+                                        </div>
+                                        <div class="block-content d-md-block">
+                                            <h3 class="heading heading-sm strong-300 c-blue text-uppercase" style="margin-top: 10px;">Chat</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="icon-block icon-block--style-1-v5 text-center active">
+                                        <div class="block-icon mb-0">
+                                        	<div style="font-size: 1.5rem;">
+                                            <i class="fas fa-globe" style="border: 2px solid blue; padding: 10px; border-radius: 10px"></i>
+                                        	</div>
+                                        </div>
+                                        <div class="block-content d-md-block">
+                                            <h3 class="heading heading-sm strong-300 c-blue text-uppercase" style="margin-top: 10px;">Web</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="icon-block icon-block--style-1-v5 text-center active">
+                                        <div class="block-icon mb-0">
+                                        	<div style="font-size: 1.5rem;">
+                                            <i class="fas fa-directions" style="border: 2px solid blue; padding: 10px; border-radius: 10px"></i>
+                                        	</div>
+                                        </div>
+                                        <div class="block-content d-md-block">
+                                            <h3 class="heading heading-sm strong-300 c-blue text-uppercase" style="margin-top: 10px;">Services</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div style="padding: 10px 0px; font-size: 0.5rem;">
+	                    <p style="margin-bottom: 0rem; text-decoration: underline; text-decoration-color: orange; font-weight: bold">
+	                   		Description :
+	                		</p>
+	                    <p style="margin-bottom: 2rem">
+	                   		<%= @company.description %>
+	                		</p>
+	                		<p style="margin-bottom: 0rem; text-decoration: underline; text-decoration-color: orange; font-weight: bold">
+	                   		Information complémentaires :
+	                		</p>
+	                		<p style="margin-bottom: 0rem">
+	                   		<i class="fas fa-envelope"></i> : <%= @company.email %>
+	                		</p>
+	                		<p>
+	                   		<i class="fas fa-phone-alt"></i> : <%= @company.number %>
+	                		</p>
+                		</div>
+            </div>
+        </div>
+        <!-- List of the Photos of a Company -->
+        <div role="tabpanel" class="tab-pane" id="tabTwo-2">
+            <div class="tab-body" style="padding: 0px 15px">
+                <p>
+                    Logo :
+                </p>
+                <p>
+                   	<%= image_tag(@company.logo, width: 60, height: 60) %>
+                </p>
+            </div>
+        </div>
+        <!-- List of the Products of a Company -->
+        <div role="tabpanel" class="tab-pane" id="tabTwo-3">
+            <div class="tab-body" style="padding: 0px 15px">
+                <div class="body-wrap shop-default shop-minimalist">
+						      <div id="st-container" class="st-container">
+						          <div class="st-pusher">
+						              <div class="st-content">
+						                  <div class="st-content-inner">
+																	<section class="slice" style="padding: 0.5rem 0rem">
+																	    <div class="container">
+																	        <div class="section-title section-title--style-1 text-center">
+																	            <h3 class="section-title-inner heading-6 strong-600 text-uppercase ls-2">
+																	                <span>List of Products</span>
+																	            </h3>
+																	            <div class="fluid-paragraph fluid-paragraph-sm c-gray-light strong-300 font-custom-4 text-center">
+																	            <%= @products.length %> products
+																	        		</div>
+																	            <span class="section-title-delimiter clearfix d-none"></span>
+																	        </div>
+
+																	        <div class="row-wrapper">
+																	            <div class="row cols-xs-space cols-sm-space cols-md-space">
+																	            	<% @products.each.with_index(1) do |product| %>
+																	                <div class="col-lg-4 col-md-6">
+																	                    <div class="block product bg-transparent no-radius">
+																	                        <div class="product-image">
+																	                            <div class="view view-first">
+																	                                  <%= link_to image_tag(product.image_product), product_path(product.id) %>
+																	                            </div>
+
+																	                            <div class="product-actions--a product-actions--2" data-animation-in="slideInRight"  data-animation-out="slideOutRight">
+																	                                <button type="button" class="btn-product-action">
+																	                                    <i class="ion-bag"></i>
+																	                                </button>
+
+																	                                <button type="button" class="btn-product-action">
+																	                                    <i class="ion-ios-heart-outline"></i>
+																	                                </button>
+																	                            </div>
+																	                        </div>
+
+																	                        <div class="block-body px-0 text-center">
+																	                            <h3 class="heading heading-6 strong-500 text-capitalize mb-0">"<%= product.title %>"</h3>
+																	                         
+																	                            <div class="price-wrapper">
+																	                                <span class="price-value"><%= number_to_currency(product.price, unit: "€", separator: ",", delimiter: "", format: "%n %u") %><span class="price heading-6 c-gray-light strong-400"></span></span>
+																	                            </div>
+
+																	                            <div class="price-wrapper">
+																	                                <span class="price-value"><%= product.description %><span class="price heading-6 c-gray-light strong-400"></span></span>
+																	                            </div>
+																	                        </div>
+																	                    </div>
+																	                </div>
+																	                <br/>
+																									<% end %>
+																	            </div>
+																	        </div>
+																	    </div>
+																	</section>
+
+																	<section class="slice-sm sct-color-1 border-top">
+																	    <div class="container">
+																	        <div class="row cols-xs-space cols-sm-space cols-md-space">
+																	            <div class="col-lg-4 b-lg-right">
+																	                <div class="px-3 py-3 text-lg-center">
+																	                    <h3 class="heading heading-6 strong-500">Free shipping in 48/72H</h3>
+																	                    <p class="c-gray-light line-height-1_6">
+																	                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+																	                    </p>
+																	                </div>
+																	            </div>
+
+																	            <div class="col-lg-4 b-lg-right">
+																	                <div class="px-3 py-3 text-lg-center">
+																	                    <h3 class="heading heading-6 strong-500">Free returns</h3>
+																	                    <p class="c-gray-light line-height-1_6">
+																	                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+																	                    </p>
+																	                </div>
+																	            </div>
+
+																	            <div class="col-lg-4">
+																	                <div class="px-3 py-3 text-lg-center">
+																	                    <h3 class="heading heading-6 strong-500">Secure payment</h3>
+																	                    <ul class="inline-links">                         
+																	                        <li>
+																	                            <%= image_tag 'icons/cards/stripe.png', width: 180, class: "img-grayscale" %>
+																	                        </li>
+																	                    </ul>
+																	                </div>
+																	            </div>
+																	        </div>
+																	    </div>
+																	</section>
+															</div>
+						            </div><!-- END: st-content-inner -->
+						        </div><!-- END: st-pusher -->
+						    </div><!-- END: st-container -->
+						</div><!-- END: body-wrap -->
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tabTwo-4">
+            <div class="tab-body" style="padding: 0px 15px">
+                <p>
+                    Mettre API Google
+                </p>
+                <p>
+                   	<%= @company.name %>
+                </p>
+            </div>
+        </div>
+    </div>
+	</div>
+
+                    <!-- FOOTER -->
+                    <footer id="footer" class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row cols-xs-space cols-sm-space cols-md-space">
+                <div class="col-lg-5">
+                    <div class="col">
+                        <img src="../../assets/images/logo/logo-1-c.png">
+                        <span class="clearfix"></span>
+                        <span class="heading heading-sm c-gray-light strong-400">One template. Infinite solutions.</span>
+                        <p class="mt-3">
+                            All the components included in Boomerang are built to the same level of quality as Bootstrap and highlighted with several example pages.
+                        </p>
+
+                        <div class="copyright mt-4">
+                            <p>
+                                Copyright &copy; 2018                                <a href="https://webpixels.io" target="_blank">
+                                    <strong>Webpixels</strong>
+                                </a> -
+                                All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="col">
+                       <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
+                           Support
+                       </h4>
+
+                       <ul class="footer-links">
+                            <li><a href="#" title="Help center">Help center</a></li>
+                            <li><a href="#" title="Discussions">Discussions</a></li>
+                            <li><a href="#" title="Contact support">Contact</a></li>
+                            <li><a href="#" title="Blog">Blog</a></li>
+                            <li><a href="#" title="Jobs">FAQ</a></li>
+                        </ul>
+                     </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="col">
+                        <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
+                            Company
+                        </h4>
+
+                        <ul class="footer-links">
+                             <li>
+                                 <a href="#" title="Home">
+                                     Home
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#" title="About us">
+                                     About us
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#" title="Services">
+                                     Services
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#" title="Blog">
+                                     Blog
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#" title="Contact">
+                                     Contact
+                                 </a>
+                             </li>
+                         </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="col">
+                        <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
+                            Get in touch
+                        </h4>
+
+                        <ul class="social-media social-media--style-1-v4">
+                            <li>
+                                <a href="#" class="facebook" target="_blank" data-toggle="tooltip" data-original-title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="instagram" target="_blank" data-toggle="tooltip" data-original-title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Dribbble">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Github">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+                </div>
+            </div>
+        </div><!-- END: st-pusher -->
+    </div><!-- END: st-container -->
+</div><!-- END: body-wrap -->
+
+<!-- SCRIPTS -->
+<a href="#" class="back-to-top btn-back-to-top"></a>
