@@ -89,3 +89,6 @@ gem 'ionicons-rails'
 gem 'linea'
 gem 'font-awesome-rails'
 
+# Webpack
+gem 'webpacker', '~> 4.x'
+
